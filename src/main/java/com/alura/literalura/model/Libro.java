@@ -10,20 +10,15 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
 @Entity
+@Table(name = "libros")
 public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String titulo;
-
-    @ElementCollection
-    private List<String> idiomas;
-
-    private int cantidadDescargas;
+    private String title;
 
     @ManyToMany
     @JoinTable(
@@ -33,6 +28,14 @@ public class Libro {
     )
     private List<Autor> autores;
 
+    @ElementCollection
+    private List<String> idiomas;
+
+    private String cantidadDescargas;
+
+    public Libro() {
+
+    }
 }
 
 

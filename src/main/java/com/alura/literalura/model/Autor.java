@@ -8,9 +8,9 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
 @Entity
+@Table(name = "autores")
 public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +25,6 @@ public class Autor {
     @ManyToMany(mappedBy = "autores")
     private List<Libro> libros;
 
+    public Autor() {
+    }
 }

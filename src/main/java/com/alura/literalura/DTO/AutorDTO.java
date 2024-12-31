@@ -1,8 +1,10 @@
-package com.alura.literalura.model;
+package com.alura.literalura.DTO;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public record Author(
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record AutorDTO(
         @JsonAlias("name")
         String name,
 

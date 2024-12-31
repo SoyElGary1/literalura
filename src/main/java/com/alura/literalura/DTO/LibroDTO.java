@@ -1,10 +1,12 @@
-package com.alura.literalura.model;
+package com.alura.literalura.DTO;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 import java.util.List;
-
-public record Book(
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record LibroDTO(
         @JsonAlias(value = "title")
         String title,
 
@@ -15,8 +17,6 @@ public record Book(
         List<String> language,
 
         @JsonAlias(value = "download_count")
-        Integer downloadCount
-
-
+        int downloadCount
 ) {
 }
